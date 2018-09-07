@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -d /sys/block/*/$MDEV ] ; then
+	mount /dev/$MDEV /mnt/usb -t vfat -o utf8=1
+fi

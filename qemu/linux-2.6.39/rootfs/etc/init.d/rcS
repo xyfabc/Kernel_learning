@@ -1,0 +1,59 @@
+#!/bin/sh
+
+
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+#
+echo "now start rootfs"
+# mount filesystems
+/bin/mount -t proc /proc /proc
+/bin/mount -t sysfs sysfs /sys
+/bin/mount -t tmpfs tmpfs /dev
+#/bin/mount -t tmpfs tmpfs /tmp/tmpfs/
+/bin/mount -t tmpfs tmpfs /tmp/
+/bin/mount -t tmpfs tmpfs /var
+
+/bin/mknod -m 660 /dev/null c 1 3
+/bin/mknod -m 660 /dev/console c 5 1
+
+#/bin/mount -t proc proc /proc
+#/bin/mount -o remount,rw / # REMOUNT_ROOTFS_RW
+#/bin/mount -a
+#/bin/mount -t sysfs sysfs /sys
+#/bin/mkdir -p /dev/pts
+#/bin/mount -t devpts devpts /dev/pts
+/bin/mkdir  /dev/shm
+/bin/mount -t tmpfs tmpfs /dev/shm
+/bin/hostname -F /etc/hostname
+
+
+for i in /etc/init.d/S??* ;do
+
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ] && continue
+
+     case "$i" in
+	*.sh)
+	    # Source shell script for speed.
+	    (
+		trap - INT QUIT TSTP
+		set start
+		. $i
+	    )
+	    ;;
+	*)
+	    # No sh extension, so fork subprocess.
+	    $i start
+	    ;;
+    esac
+done
+
+echo "mount app rootfs"
+ubiattach /dev/ubi_ctrl -m 2 -d 0  
+mount -t ubifs ubi0_0 /lib/ -r
+
+echo "mount app rootfs done.begin app.sh"
+
+/lib/home/hanvon/app.sh
+#/etc/face_module_start.sh &
+
