@@ -1,0 +1,13 @@
+---- uint8_t Matches (3 in 2 files) ----
+Camera.h (z:\home\...\uvc):37
+	uint8_t color;
+	unsigned int imgsize;
+	void *imgdata;
+Uvc-gadget.c (z:\home\...\uvc):397
+uvc_events_process_control(struct uvc_device *dev, uint8_t req, uint8_t cs,
+			   struct uvc_request_data *resp)
+{
+Uvc-gadget.c (z:\home\...\uvc):406
+uvc_events_process_streaming(struct uvc_device *dev, uint8_t req, uint8_t cs,
+			     struct uvc_request_data *resp)
+{

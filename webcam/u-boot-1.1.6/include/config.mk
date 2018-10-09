@@ -1,0 +1,7 @@
+ARCH   = mips
+CPU    = mips
+BOARD  = mensa
+CONFIG_MBR_UBOOT = y
+CONFIG_MSC_U_BOOT = y
+CONFIG_CPU_TYPE = 4775
+CONFIG_USE_DDR3 = y

@@ -1,0 +1,799 @@
+for dir in tools examples post/ingenic ; do make -C $dir _depend ; done
+make -C tools all
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+ln -s ../common/environment.c environment.c
+ln -s ../lib_generic/crc32.c crc32.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o img2srec.o img2srec.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make[1]: 没有什么可以做的为 `_depend'。
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+make[1]: 没有什么可以做的为 `_depend'。
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o mkimage.o mkimage.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make[1]: 没有什么可以做的为 `_depend'。
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make -C examples all
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o hello_world.o hello_world.c
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o crc32.o crc32.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o stubs.o stubs.c
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o envcrc.o envcrc.c
+mipsel-linux-ar crv libstubs.a stubs.o
+a - stubs.o
+mipsel-linux-ld -g  -Ttext 0x80200000 -T mips.lds \
+			-o hello_world -e hello_world hello_world.o libstubs.a \
+			-L/opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2 -lgcc
+mipsel-linux-objcopy -O srec hello_world hello_world.srec 2>/dev/null
+mipsel-linux-objcopy -O binary hello_world hello_world.bin 2>/dev/null
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/examples'
+make -C post/ingenic all
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_post.o jz_post.c
+gcc -g  -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -c -o environment.o environment.c
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o gen_eth_addr.o gen_eth_addr.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_tests.o jz_tests.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o memory.o memory.c
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o bmp_logo.o bmp_logo.c
+mipsel-linux-ar crv libingenic_post.a jz_post.o jz_tests.o memory.o
+a - jz_post.o
+a - jz_tests.o
+a - memory.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make -C cpu/mips start.o
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o mkuartconfig.o mkuartconfig.c
+gcc -g -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -c -o inca-swap-bytes.o inca-swap-bytes.c
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o img2srec img2srec.o
+strip img2srec
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o mkimage mkimage.o crc32.o
+strip mkimage
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O -o envcrc envcrc.o crc32.o environment.o
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o gen_eth_addr gen_eth_addr.o
+strip gen_eth_addr
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o bmp_logo bmp_logo.o
+strip bmp_logo
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o mkuartconfig mkuartconfig.o
+strip mkuartconfig
+./mkuartconfig
+gcc -Wall -pedantic -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include2 -idirafter /home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -DTEXT_BASE=0x80100200 -DUSE_HOSTCC -O  -o inca-swap-bytes inca-swap-bytes.o
+strip inca-swap-bytes
+./bmp_logo logos/denx.bmp >/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include/bmp_logo.h
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/tools'
+make -C lib_generic/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_generic'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_generic'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_generic'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bzlib.o bzlib.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bzlib_crctable.o bzlib_crctable.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bzlib_decompress.o bzlib_decompress.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bzlib_randtable.o bzlib_randtable.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bzlib_huffman.o bzlib_huffman.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o crc32.o crc32.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+mipsel-linux-gcc  -D__ASSEMBLY__ -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -c -o start.o start.S
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+make -C board/mensa/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/board/mensa'
+mipsel-linux-gcc -M -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes  mensa.c flash.c > .depend
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ctype.o ctype.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/board/mensa'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/board/mensa'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mensa.o mensa.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o display_options.o display_options.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ldiv.o ldiv.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o string.o string.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o flash.o flash.c
+mipsel-linux-ar crv libmensa.a mensa.o flash.o 
+a - mensa.o
+a - flash.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/board/mensa'
+make -C cpu/mips/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+mipsel-linux-gcc  -D__ASSEMBLY__ -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -c -o incaip_wdt.o incaip_wdt.S
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o vsprintf.o vsprintf.c
+mipsel-linux-gcc  -D__ASSEMBLY__ -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -c -o cache.o cache.S
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4730.o jz4730.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4740.o jz4740.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o zlib.o zlib.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz5730.o jz5730.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_lcd.o jz_lcd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4740_slcd.o jz4740_slcd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4750_lcd.o jz4750_lcd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_serial.o jz_serial.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_eth.o jz_eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_i2c.o jz_i2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o asc_serial.o asc_serial.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o au1x00_serial.o au1x00_serial.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o au1x00_eth.o au1x00_eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o au1x00_usb_ohci.o au1x00_usb_ohci.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cpu.o cpu.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o interrupts.o interrupts.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o incaip_clock.o incaip_clock.c
+mipsel-linux-ar crv libgeneric.a bzlib.o bzlib_crctable.o bzlib_decompress.o bzlib_randtable.o bzlib_huffman.o crc32.o ctype.o display_options.o ldiv.o string.o vsprintf.o zlib.o
+a - bzlib.o
+a - bzlib_crctable.o
+a - bzlib_decompress.o
+a - bzlib_randtable.o
+a - bzlib_huffman.o
+a - crc32.o
+a - ctype.o
+a - display_options.o
+a - ldiv.o
+a - string.o
+a - vsprintf.o
+a - zlib.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_generic'
+make -C lib_mips/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_mmc.o jz_mmc.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_mips'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4730_nand.o jz4730_nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4740_cpm_test.o jz4740_cpm_test.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz5730_nand.o jz5730_nand.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_mips'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_mips'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o board.o board.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4740_nand.o jz4740_nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4750_nand.o jz4750_nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o time.o time.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_cs8900.o jz_cs8900.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mips_linux.o mips_linux.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ax88796c.o ax88796c.c
+mipsel-linux-ar crv libmips.a board.o time.o mips_linux.o
+a - board.o
+a - time.o
+a - mips_linux.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/lib_mips'
+make -C fs/cramfs/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4750.o jz4750.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/cramfs'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4750_mmc.o jz4750_mmc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4775.o jz4775.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/cramfs'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/cramfs'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cramfs.o cramfs.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o uncompress.o uncompress.c
+mipsel-linux-ar crv libcramfs.a cramfs.o uncompress.o
+a - cramfs.o
+a - uncompress.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/cramfs'
+make -C fs/fat/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fat'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4775_nand.o jz4775_nand.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fat'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fat'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fat.o fat.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o file.o file.c
+mipsel-linux-ar crv libfat.a fat.o file.o
+a - fat.o
+a - file.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fat'
+make -C fs/fdos/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4775_eth.o jz4775_eth.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fdos'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fdos'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o synopGMAC_Dev.o synopGMAC_Dev.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fdos'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fat.o fat.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o vfat.o vfat.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dev.o dev.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fdos.o fdos.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fs.o fs.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o subdir.o subdir.c
+mipsel-linux-ar crv libfdos.a fat.o vfat.o dev.o fdos.o fs.o subdir.o
+a - fat.o
+a - vfat.o
+a - dev.o
+a - fdos.o
+a - fs.o
+a - subdir.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/fdos'
+make -C fs/jffs2/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/jffs2'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/jffs2'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/jffs2'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jffs2_1pass.o jffs2_1pass.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o compr_rtime.o compr_rtime.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o compr_rubin.o compr_rubin.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o compr_zlib.o compr_zlib.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4775_ddr.o jz4775_ddr.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mini_inflate.o mini_inflate.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o compr_lzo.o compr_lzo.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o compr_lzari.o compr_lzari.c
+mipsel-linux-ar crv libjffs2.a jffs2_1pass.o compr_rtime.o compr_rubin.o compr_zlib.o mini_inflate.o compr_lzo.o compr_lzari.o
+a - jffs2_1pass.o
+a - compr_rtime.o
+a - compr_rubin.o
+a - compr_zlib.o
+a - mini_inflate.o
+a - compr_lzo.o
+a - compr_lzari.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/jffs2'
+make -C fs/reiserfs/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/reiserfs'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/reiserfs'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz4775_lcd.o jz4775_lcd.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/reiserfs'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o reiserfs.o reiserfs.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dev.o dev.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mode_string.o mode_string.c
+mipsel-linux-ar crv libreiserfs.a reiserfs.o dev.o mode_string.o
+a - reiserfs.o
+a - dev.o
+a - mode_string.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/reiserfs'
+make -C fs/ext2/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/ext2'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/ext2'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o jz_ddr3_init.o jz_ddr3_init.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/ext2'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ext2fs.o ext2fs.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dev.o dev.c
+mipsel-linux-ar crv libext2fs.a ext2fs.o dev.o
+a - ext2fs.o
+a - dev.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/fs/ext2'
+make -C net/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/net'
+mipsel-linux-ar crv libmips.a incaip_wdt.o cache.o jz4730.o jz4740.o jz5730.o jz_lcd.o jz4740_slcd.o jz4750_lcd.o jz_serial.o jz_eth.o jz_i2c.o asc_serial.o au1x00_serial.o au1x00_eth.o au1x00_usb_ohci.o cpu.o interrupts.o incaip_clock.o jz_mmc.o jz4730_nand.o jz4740_cpm_test.o jz5730_nand.o jz4740_nand.o jz4750_nand.o jz_cs8900.o ax88796c.o jz4750.o jz4750_mmc.o jz4775.o jz4775_nand.o jz4775_eth.o synopGMAC_Dev.o jz4775_ddr.o jz4775_lcd.o jz_ddr3_init.o
+a - incaip_wdt.o
+a - cache.o
+a - jz4730.o
+a - jz4740.o
+a - jz5730.o
+a - jz_lcd.o
+a - jz4740_slcd.o
+a - jz4750_lcd.o
+a - jz_serial.o
+a - jz_eth.o
+a - jz_i2c.o
+a - asc_serial.o
+a - au1x00_serial.o
+a - au1x00_eth.o
+a - au1x00_usb_ohci.o
+a - cpu.o
+a - interrupts.o
+a - incaip_clock.o
+a - jz_mmc.o
+a - jz4730_nand.o
+a - jz4740_cpm_test.o
+a - jz5730_nand.o
+a - jz4740_nand.o
+a - jz4750_nand.o
+a - jz_cs8900.o
+a - ax88796c.o
+a - jz4750.o
+a - jz4750_mmc.o
+a - jz4775.o
+a - jz4775_nand.o
+a - jz4775_eth.o
+a - synopGMAC_Dev.o
+a - jz4775_ddr.o
+a - jz4775_lcd.o
+a - jz_ddr3_init.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/cpu/mips'
+make -C disk/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/disk'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/disk'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/disk'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o part.o part.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/net'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/net'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o net.o net.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o part_mac.o part_mac.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o part_dos.o part_dos.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o part_iso.o part_iso.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o part_amiga.o part_amiga.c
+mipsel-linux-ar crv libdisk.a part.o part_mac.o part_dos.o part_iso.o part_amiga.o
+a - part.o
+a - part_mac.o
+a - part_dos.o
+a - part_iso.o
+a - part_amiga.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/disk'
+make -C rtc/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/rtc'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o tftp.o tftp.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bootp.o bootp.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rarp.o rarp.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o eth.o eth.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/rtc'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nfs.o nfs.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/rtc'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o date.o date.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bf533_rtc.o bf533_rtc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds12887.o ds12887.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1302.o ds1302.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1306.o ds1306.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sntp.o sntp.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1307.o ds1307.c
+mipsel-linux-ar crv libnet.a net.o tftp.o bootp.o rarp.o eth.o nfs.o sntp.o
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1337.o ds1337.c
+a - net.o
+a - tftp.o
+a - bootp.o
+a - rarp.o
+a - eth.o
+a - nfs.o
+a - sntp.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/net'
+make -C dtt/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/dtt'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1374.o ds1374.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1556.o ds1556.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds164x.o ds164x.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/dtt'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds174x.o ds174x.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/dtt'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o lm75.o lm75.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o m41t11.o m41t11.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ds1621.o ds1621.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o max6900.o max6900.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o adm1021.o adm1021.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o m48t35ax.o m48t35ax.c
+mipsel-linux-ar crv libdtt.a lm75.o ds1621.o adm1021.o
+a - lm75.o
+a - ds1621.o
+a - adm1021.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/dtt'
+make -C drivers/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mc146818.o mc146818.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mk48t59.o mk48t59.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mpc5xxx.o mpc5xxx.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mpc8xx.o mpc8xx.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pcf8563.o pcf8563.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o s3c24x0_rtc.o s3c24x0_rtc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rs5c372.o rs5c372.c
+mipsel-linux-ar crv librtc.a date.o bf533_rtc.o ds12887.o ds1302.o ds1306.o ds1307.o ds1337.o ds1374.o ds1556.o ds164x.o ds174x.o m41t11.o max6900.o m48t35ax.o mc146818.o mk48t59.o mpc5xxx.o mpc8xx.o pcf8563.o s3c24x0_rtc.o rs5c372.o
+a - date.o
+a - bf533_rtc.o
+a - ds12887.o
+a - ds1302.o
+a - ds1306.o
+a - ds1307.o
+a - ds1337.o
+a - ds1374.o
+a - ds1556.o
+a - ds164x.o
+a - ds174x.o
+a - m41t11.o
+a - max6900.o
+a - m48t35ax.o
+a - mc146818.o
+a - mk48t59.o
+a - mpc5xxx.o
+a - mpc8xx.o
+a - pcf8563.o
+a - s3c24x0_rtc.o
+a - rs5c372.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/rtc'
+make -C drivers/nand/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand.o nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_ids.o nand_ids.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_ecc.o nand_ecc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_bbt.o nand_bbt.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_util.o nand_util.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_base_jz4775.o nand_base_jz4775.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o 3c589.o 3c589.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o 5701rls.o 5701rls.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ali512x.o ali512x.c
+mipsel-linux-ar crv libnand.a nand.o nand_ids.o nand_ecc.o nand_bbt.o nand_util.o nand_base_jz4775.o
+a - nand.o
+a - nand_ids.o
+a - nand_ecc.o
+a - nand_bbt.o
+a - nand_util.o
+a - nand_base_jz4775.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand'
+make -C drivers/nand_legacy/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o atmel_usart.o atmel_usart.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand_legacy'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bcm570x.o bcm570x.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand_legacy'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand_legacy'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o nand_legacy.o nand_legacy.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bcm570x_autoneg.o bcm570x_autoneg.c
+mipsel-linux-ar crv libnand_legacy.a nand_legacy.o
+a - nand_legacy.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/nand_legacy'
+make -C drivers/sk98lin/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cfb_console.o cfb_console.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/sk98lin'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cfi_flash.o cfi_flash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cs8900.o cs8900.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ct69000.o ct69000.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dataflash.o dataflash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dc2114x.o dc2114x.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dm9000x.o dm9000x.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o e1000.o e1000.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o eepro100.o eepro100.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/sk98lin'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/sk98lin'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skge.o skge.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o i8042.o i8042.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skaddr.o skaddr.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o inca-ip_sw.o inca-ip_sw.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgehwt.o skgehwt.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgeinit.o skgeinit.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o keyboard.o keyboard.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgepnmi.o skgepnmi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o lan91c96.o lan91c96.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgesirq.o skgesirq.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o ski2c.o ski2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o natsemi.o natsemi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sklm80.o sklm80.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skqueue.o skqueue.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ne2000.o ne2000.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skrlmt.o skrlmt.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sktimer.o sktimer.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o netarm_eth.o netarm_eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skvpd.o skvpd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skxmac2.o skxmac2.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o netconsole.o netconsole.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skcsum.o skcsum.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ns16550.o ns16550.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_skb.o uboot_skb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ns8382x.o ns8382x.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_drv.o uboot_drv.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ns87308.o ns87308.c
+mipsel-linux-ar crv libsk98lin.a skge.o skaddr.o skgehwt.o skgeinit.o skgepnmi.o skgesirq.o ski2c.o sklm80.o skqueue.o skrlmt.o sktimer.o skvpd.o skxmac2.o skcsum.o uboot_skb.o uboot_drv.o
+a - skge.o
+a - skaddr.o
+a - skgehwt.o
+a - skgeinit.o
+a - skgepnmi.o
+a - skgesirq.o
+a - ski2c.o
+a - sklm80.o
+a - skqueue.o
+a - skrlmt.o
+a - sktimer.o
+a - skvpd.o
+a - skxmac2.o
+a - skcsum.o
+a - uboot_skb.o
+a - uboot_drv.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers/sk98lin'
+make -C post/ingenic/
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ns7520_eth.o ns7520_eth.c
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make[1]: 没有什么可以做的为 `all'。
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/post/ingenic'
+make -C common/
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/common'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o omap1510_i2c.o omap1510_i2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o omap24xx_i2c.o omap24xx_i2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pci.o pci.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pci_auto.o pci_auto.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pci_indirect.o pci_indirect.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pcnet.o pcnet.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o plb2800_eth.o plb2800_eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ps2ser.o ps2ser.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ps2mult.o ps2mult.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pc_keyb.o pc_keyb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rtl8019.o rtl8019.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rtl8139.o rtl8139.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rtl8169.o rtl8169.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o s3c4510b_eth.o s3c4510b_eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o s3c4510b_uart.o s3c4510b_uart.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sed13806.o sed13806.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sed156x.o sed156x.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial.o serial.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial_max3100.o serial_max3100.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial_pl010.o serial_pl010.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial_pl011.o serial_pl011.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial_xuartlite.o serial_xuartlite.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sl811_usb.o sl811_usb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sm501.o sm501.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o smc91111.o smc91111.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o smiLynxEM.o smiLynxEM.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o status_led.o status_led.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o sym53c8xx.o sym53c8xx.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ahci.o ahci.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ti_pci1410a.o ti_pci1410a.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o tigon3.o tigon3.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o tsec.o tsec.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usbdcore.o usbdcore.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usbdcore_ep0.o usbdcore_ep0.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usbdcore_omap1510.o usbdcore_omap1510.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usbtty.o usbtty.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o videomodes.o videomodes.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o w83c553f.o w83c553f.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ks8695eth.o ks8695eth.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o pxa_pcmcia.o pxa_pcmcia.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o mpc8xx_pcmcia.o mpc8xx_pcmcia.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o tqm8xx_pcmcia.o tqm8xx_pcmcia.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o rpx_pcmcia.o rpx_pcmcia.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fsl_i2c.o fsl_i2c.c
+mipsel-linux-ar crv libdrivers.a 3c589.o 5701rls.o ali512x.o atmel_usart.o bcm570x.o bcm570x_autoneg.o cfb_console.o cfi_flash.o cs8900.o ct69000.o dataflash.o dc2114x.o dm9000x.o e1000.o eepro100.o i8042.o inca-ip_sw.o keyboard.o lan91c96.o natsemi.o ne2000.o netarm_eth.o netconsole.o ns16550.o ns8382x.o ns87308.o ns7520_eth.o omap1510_i2c.o omap24xx_i2c.o pci.o pci_auto.o pci_indirect.o pcnet.o plb2800_eth.o ps2ser.o ps2mult.o pc_keyb.o rtl8019.o rtl8139.o rtl8169.o s3c4510b_eth.o s3c4510b_uart.o sed13806.o sed156x.o serial.o serial_max3100.o serial_pl010.o serial_pl011.o serial_xuartlite.o sl811_usb.o sm501.o smc91111.o smiLynxEM.o status_led.o sym53c8xx.o ahci.o ti_pci1410a.o tigon3.o tsec.o usbdcore.o usbdcore_ep0.o usbdcore_omap1510.o usbtty.o videomodes.o w83c553f.o ks8695eth.o pxa_pcmcia.o mpc8xx_pcmcia.o tqm8xx_pcmcia.o rpx_pcmcia.o fsl_i2c.o
+a - 3c589.o
+a - 5701rls.o
+a - ali512x.o
+a - atmel_usart.o
+a - bcm570x.o
+a - bcm570x_autoneg.o
+a - cfb_console.o
+a - cfi_flash.o
+a - cs8900.o
+a - ct69000.o
+a - dataflash.o
+a - dc2114x.o
+a - dm9000x.o
+a - e1000.o
+a - eepro100.o
+a - i8042.o
+a - inca-ip_sw.o
+a - keyboard.o
+a - lan91c96.o
+a - natsemi.o
+a - ne2000.o
+a - netarm_eth.o
+a - netconsole.o
+a - ns16550.o
+a - ns8382x.o
+a - ns87308.o
+a - ns7520_eth.o
+a - omap1510_i2c.o
+a - omap24xx_i2c.o
+a - pci.o
+a - pci_auto.o
+a - pci_indirect.o
+a - pcnet.o
+a - plb2800_eth.o
+a - ps2ser.o
+a - ps2mult.o
+a - pc_keyb.o
+a - rtl8019.o
+a - rtl8139.o
+a - rtl8169.o
+a - s3c4510b_eth.o
+a - s3c4510b_uart.o
+a - sed13806.o
+a - sed156x.o
+a - serial.o
+a - serial_max3100.o
+a - serial_pl010.o
+a - serial_pl011.o
+a - serial_xuartlite.o
+a - sl811_usb.o
+a - sm501.o
+a - smc91111.o
+a - smiLynxEM.o
+a - status_led.o
+a - sym53c8xx.o
+a - ahci.o
+a - ti_pci1410a.o
+a - tigon3.o
+a - tsec.o
+a - usbdcore.o
+a - usbdcore_ep0.o
+a - usbdcore_omap1510.o
+a - usbtty.o
+a - videomodes.o
+a - w83c553f.o
+a - ks8695eth.o
+a - pxa_pcmcia.o
+a - mpc8xx_pcmcia.o
+a - tqm8xx_pcmcia.o
+a - rpx_pcmcia.o
+a - fsl_i2c.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/drivers'
+make -C msc_spl/board/mensa all
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/msc_spl/board/mensa'
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/msc_spl/board/mensa'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/msc_spl/board/mensa'
+mipsel-linux-gcc  -D__ASSEMBLY__ -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -DCONFIG_MSC_SPL -c -o start.o start.S
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/common'
+make[1]: 正在进入目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/common'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o main.o main.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -DCONFIG_MSC_SPL -c -o msc_boot_jz4775.o msc_boot_jz4775.c
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/msc_spl/board/mensa'
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ACEX1K.o ACEX1K.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o altera.o altera.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o bedbug.o bedbug.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o circbuf.o circbuf.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_ace.o cmd_ace.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_autoscript.o cmd_autoscript.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_bdinfo.o cmd_bdinfo.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_bedbug.o cmd_bedbug.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_bmp.o cmd_bmp.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_boot.o cmd_boot.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_bootm.o cmd_bootm.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_cache.o cmd_cache.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_console.o cmd_console.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_date.o cmd_date.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_dcr.o cmd_dcr.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_diag.o cmd_diag.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_display.o cmd_display.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_doc.o cmd_doc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_dtt.o cmd_dtt.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_eeprom.o cmd_eeprom.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_elf.o cmd_elf.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_ext2.o cmd_ext2.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_fat.o cmd_fat.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_fdc.o cmd_fdc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_fdos.o cmd_fdos.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_flash.o cmd_flash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_fpga.o cmd_fpga.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_i2c.o cmd_i2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_ide.o cmd_ide.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_immap.o cmd_immap.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_itest.o cmd_itest.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_jffs2.o cmd_jffs2.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_load.o cmd_load.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_log.o cmd_log.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_mem.o cmd_mem.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_mii.o cmd_mii.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_misc.o cmd_misc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_mmc.o cmd_mmc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_msc.o cmd_msc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_nand.o cmd_nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_net.o cmd_net.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_nvedit.o cmd_nvedit.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_ftest.o cmd_ftest.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_pci.o cmd_pci.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_pcmcia.o cmd_pcmcia.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_portio.o cmd_portio.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_reginfo.o cmd_reginfo.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_reiser.o cmd_reiser.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_scsi.o cmd_scsi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_spi.o cmd_spi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_universe.o cmd_universe.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_usb.o cmd_usb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_vfd.o cmd_vfd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o command.o command.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o console.o console.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o devices.o devices.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o dlmalloc.o dlmalloc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o docecc.o docecc.c
+mipsel-linux-gcc  -D__ASSEMBLY__ -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wa,--no-warn \
+		-DENV_CRC=0 \
+		-c -o environment.o environment.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_common.o env_common.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_nand.o env_nand.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_dataflash.o env_dataflash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_flash.o env_flash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_eeprom.o env_eeprom.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_nvram.o env_nvram.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_nowhere.o env_nowhere.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o env_msc.o env_msc.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o exports.o exports.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o flash.o flash.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o fpga.o fpga.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o ft_build.o ft_build.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o hush.o hush.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o kgdb.o kgdb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o lcd.o lcd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o lists.o lists.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o lynxkdi.o lynxkdi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o memsize.o memsize.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o miiphybb.o miiphybb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o miiphyutil.o miiphyutil.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o s_record.o s_record.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o serial.o serial.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o soft_i2c.o soft_i2c.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o soft_spi.o soft_spi.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o spartan2.o spartan2.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o spartan3.o spartan3.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usb.o usb.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usb_kbd.o usb_kbd.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o usb_storage.o usb_storage.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o virtex2.o virtex2.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o xilinx.o xilinx.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o crc16.o crc16.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o xyzModem.o xyzModem.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_mac.o cmd_mac.c
+mipsel-linux-gcc -g  -Os   -D__KERNEL__ -DTEXT_BASE=0x80100200  -I/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/include -fno-builtin -ffreestanding -nostdinc -isystem /opt/mipseltools-gcc412-glibc261/lib/gcc/mipsel-linux/4.1.2/include -pipe  -DCONFIG_MIPS -D__MIPS__ -mtune=r4600 -mips32 -O2  -mabicalls -Wall -Wstrict-prototypes -c -o cmd_jz.o cmd_jz.c
+mipsel-linux-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_ace.o cmd_autoscript.o cmd_bdinfo.o cmd_bedbug.o cmd_bmp.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_dcr.o cmd_diag.o cmd_display.o cmd_doc.o cmd_dtt.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_fdos.o cmd_flash.o cmd_fpga.o cmd_i2c.o cmd_ide.o cmd_immap.o cmd_itest.o cmd_jffs2.o cmd_load.o cmd_log.o cmd_mem.o cmd_mii.o cmd_misc.o cmd_mmc.o cmd_msc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_ftest.o cmd_pci.o cmd_pcmcia.o cmd_portio.o cmd_reginfo.o cmd_reiser.o cmd_scsi.o cmd_spi.o cmd_universe.o cmd_usb.o cmd_vfd.o command.o console.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_nand.o env_dataflash.o env_flash.o env_eeprom.o env_nvram.o env_nowhere.o env_msc.o exports.o flash.o fpga.o ft_build.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_jz.o
+a - main.o
+a - ACEX1K.o
+a - altera.o
+a - bedbug.o
+a - circbuf.o
+a - cmd_ace.o
+a - cmd_autoscript.o
+a - cmd_bdinfo.o
+a - cmd_bedbug.o
+a - cmd_bmp.o
+a - cmd_boot.o
+a - cmd_bootm.o
+a - cmd_cache.o
+a - cmd_console.o
+a - cmd_date.o
+a - cmd_dcr.o
+a - cmd_diag.o
+a - cmd_display.o
+a - cmd_doc.o
+a - cmd_dtt.o
+a - cmd_eeprom.o
+a - cmd_elf.o
+a - cmd_ext2.o
+a - cmd_fat.o
+a - cmd_fdc.o
+a - cmd_fdos.o
+a - cmd_flash.o
+a - cmd_fpga.o
+a - cmd_i2c.o
+a - cmd_ide.o
+a - cmd_immap.o
+a - cmd_itest.o
+a - cmd_jffs2.o
+a - cmd_load.o
+a - cmd_log.o
+a - cmd_mem.o
+a - cmd_mii.o
+a - cmd_misc.o
+a - cmd_mmc.o
+a - cmd_msc.o
+a - cmd_nand.o
+a - cmd_net.o
+a - cmd_nvedit.o
+a - cmd_ftest.o
+a - cmd_pci.o
+a - cmd_pcmcia.o
+a - cmd_portio.o
+a - cmd_reginfo.o
+a - cmd_reiser.o
+a - cmd_scsi.o
+a - cmd_spi.o
+a - cmd_universe.o
+a - cmd_usb.o
+a - cmd_vfd.o
+a - command.o
+a - console.o
+a - devices.o
+a - dlmalloc.o
+a - docecc.o
+a - environment.o
+a - env_common.o
+a - env_nand.o
+a - env_dataflash.o
+a - env_flash.o
+a - env_eeprom.o
+a - env_nvram.o
+a - env_nowhere.o
+a - env_msc.o
+a - exports.o
+a - flash.o
+a - fpga.o
+a - ft_build.o
+a - hush.o
+a - kgdb.o
+a - lcd.o
+a - lists.o
+a - lynxkdi.o
+a - memsize.o
+a - miiphybb.o
+a - miiphyutil.o
+a - s_record.o
+a - serial.o
+a - soft_i2c.o
+a - soft_spi.o
+a - spartan2.o
+a - spartan3.o
+a - usb.o
+a - usb_kbd.o
+a - usb_storage.o
+a - virtex2.o
+a - xilinx.o
+a - crc16.o
+a - xyzModem.o
+a - cmd_mac.o
+a - cmd_jz.o
+make[1]:正在离开目录 `/home/b11/update20130628/B11_V1.2/u-boot-1.1.6/common'

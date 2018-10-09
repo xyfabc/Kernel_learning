@@ -1,0 +1,1 @@
+/home/eric/Works/jz4775/c340A/u-boot-1.1.6/msc_spl/msc_boot_jz4775.c

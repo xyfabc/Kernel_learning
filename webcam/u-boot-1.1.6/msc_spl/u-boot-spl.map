@@ -1,0 +1,310 @@
+
+舍弃的输入节
+
+ .reginfo       0x0000000000000000        0x0 msc_boot_jz4775.o
+ .reginfo       0x0000000000000000        0x0 cpu.o
+ .reginfo       0x0000000000000000        0x0 jz4775.o
+ .reginfo       0x0000000000000000        0x0 jz_serial.o
+ .reginfo       0x0000000000000000        0x0 jz4775_ddr.o
+ .reginfo       0x0000000000000000        0x0 jz_ddr3_init.o
+
+内存配置
+
+名称           来源             长度             属性
+*default*        0x0000000000000000 0xffffffffffffffff
+
+链结器命令稿和内存映射
+
+                0x0000000000000000                . = 0x0
+                0x0000000000000000                . = ALIGN (0x4)
+
+.text           0x00000000f4000a00     0x2500
+ *(.text)
+ .text          0x00000000f4000a00       0xc0 start.o
+                0x00000000f4000a00                _start
+ .text          0x00000000f4000ac0      0x920 msc_boot_jz4775.o
+                0x00000000f4000ee4                mmc_block_readm
+                0x00000000f4000bd0                mmc_found
+                0x00000000f4000bd8                mmc_init
+                0x00000000f4001128                spl_boot
+ .text          0x00000000f40013e0       0xa0 cpu.o
+                0x00000000f4001440                flush_cache_all
+                0x00000000f40013e0                flush_icache_all
+                0x00000000f400141c                flush_dcache_all
+ .text          0x00000000f4001480      0x2d0 jz4775.o
+                0x00000000f40016f0                mdelay
+                0x00000000f4001658                gpio_debug
+                0x00000000f4001618                core_voltage_regulate
+                0x00000000f4001480                jzmemset
+                0x00000000f40016c4                udelay
+                0x00000000f4001564                mpll_init
+                0x00000000f40014e4                apll_init
+                0x00000000f4001620                pll_init
+ .text          0x00000000f4001750      0x380 jz_serial.o
+                0x00000000f40019f8                serial_put_dec
+                0x00000000f4001750                serial_setbrg
+                0x00000000f4001968                serial_put_hex
+                0x00000000f400190c                serial_tstc
+                0x00000000f4001840                serial_putc
+                0x00000000f40017c8                serial_init
+                0x00000000f40018b8                serial_puts
+                0x00000000f4001920                serial_getc
+ .text          0x00000000f4001ad0      0xca0 jz4775_ddr.o
+                0x00000000f4001b34                remap_swap
+                0x00000000f4001c08                sdram_init
+                0x00000000f4001ad0                initdram
+ .text          0x00000000f4002770      0x790 jz_ddr3_init.o
+                0x00000000f4002770                ddr_cfg_init
+                0x00000000f400278c                ddr_phy_init
+                0x00000000f4002f00                . = ALIGN (0x4)
+
+.rodata
+ *(.rodata)
+
+.reginfo        0x00000000f4002f00       0x18
+ .reginfo       0x00000000f4002f00       0x18 start.o
+
+.rodata.str1.4  0x00000000f4002f18       0xa8
+ .rodata.str1.4
+                0x00000000f4002f18       0x58 msc_boot_jz4775.o
+ .rodata.str1.4
+                0x00000000f4002f70       0x10 jz4775_ddr.o
+ .rodata.str1.4
+                0x00000000f4002f80       0x40 jz_ddr3_init.o
+                0x00000000f4002fc0                . = ALIGN (0x4)
+
+.data           0x00000000f4002fc0        0x0
+ *(.data)
+ .data          0x00000000f4002fc0        0x0 start.o
+ .data          0x00000000f4002fc0        0x0 msc_boot_jz4775.o
+ .data          0x00000000f4002fc0        0x0 cpu.o
+ .data          0x00000000f4002fc0        0x0 jz4775.o
+ .data          0x00000000f4002fc0        0x0 jz_serial.o
+ .data          0x00000000f4002fc0        0x0 jz4775_ddr.o
+ .data          0x00000000f4002fc0        0x0 jz_ddr3_init.o
+                0x00000000f4002fc0                . = ALIGN (0x4)
+
+.sdata
+ *(.sdata)
+ *(.sdata)
+                0x00000000f4002fc0                _gp = ALIGN (0x10)
+                0x00000000f4002fc0                __got_start = .
+
+.got            0x00000000f4002fc0       0x74
+ *(.got)
+ .got           0x00000000f4002fc0       0x74 start.o
+                0x00000000f4002fc0                _GLOBAL_OFFSET_TABLE_
+                0x00000000f4003034                __got_end = .
+                0x00000000f4003034                __u_boot_cmd_start = .
+
+.u_boot_cmd
+ *(.u_boot_cmd)
+                0x00000000f4003034                __u_boot_cmd_end = .
+                0x00000000f4003034                uboot_end_data = .
+                0x000000000000001d                num_got_entries = ((__got_end - __got_start) >> 0x2)
+                0x00000000f4003034                . = ALIGN (0x4)
+
+.sbss
+ *(.sbss)
+
+.bss            0x00000000f4003040       0x30
+ *(.bss)
+ .bss           0x00000000f4003040        0x0 start.o
+ .bss           0x00000000f4003040       0x20 msc_boot_jz4775.o
+ .bss           0x00000000f4003060        0x0 cpu.o
+ .bss           0x00000000f4003060        0x0 jz4775.o
+ .bss           0x00000000f4003060       0x10 jz_serial.o
+ .bss           0x00000000f4003070        0x0 jz4775_ddr.o
+ .bss           0x00000000f4003070        0x0 jz_ddr3_init.o
+                0x00000000f4003070                uboot_end = .
+
+.rel.dyn        0x00000000f4003070        0x0
+ .rel.dyn       0x0000000000000000        0x0 start.o
+段 .text 的地址设置为 0xf4000a00
+LOAD start.o
+LOAD msc_boot_jz4775.o
+LOAD cpu.o
+LOAD jz4775.o
+LOAD jz_serial.o
+LOAD jz4775_ddr.o
+LOAD jz_ddr3_init.o
+OUTPUT(/home/eric/Works/jz4775/c340A/u-boot-1.1.6/msc_spl/u-boot-spl elf32-tradlittlemips)
+
+.pdr            0x0000000000000000      0x3a0
+ .pdr           0x0000000000000000        0x0 start.o
+ .pdr           0x0000000000000000       0xa0 msc_boot_jz4775.o
+ .pdr           0x00000000000000a0       0x60 cpu.o
+ .pdr           0x0000000000000100      0x100 jz4775.o
+ .pdr           0x0000000000000200      0x100 jz_serial.o
+ .pdr           0x0000000000000300       0x60 jz4775_ddr.o
+ .pdr           0x0000000000000360       0x40 jz_ddr3_init.o
+
+.debug_line     0x0000000000000000       0x6e
+ .debug_line    0x0000000000000000       0x6e start.o
+
+.debug_info     0x0000000000000000       0x6d
+ .debug_info    0x0000000000000000       0x6d start.o
+
+.debug_abbrev   0x0000000000000000       0x14
+ .debug_abbrev  0x0000000000000000       0x14 start.o
+
+.debug_aranges  0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 start.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 msc_boot_jz4775.o
+ .mdebug.abi32  0x0000000000000000        0x0 cpu.o
+ .mdebug.abi32  0x0000000000000000        0x0 jz4775.o
+ .mdebug.abi32  0x0000000000000000        0x0 jz_serial.o
+ .mdebug.abi32  0x0000000000000000        0x0 jz4775_ddr.o
+ .mdebug.abi32  0x0000000000000000        0x0 jz_ddr3_init.o
+
+.debug_abbrev.1
+                0x0000000000000000      0x2b6
+ .debug_abbrev  0x0000000000000000      0x2b6 msc_boot_jz4775.o
+
+.debug_info.2   0x0000000000000000      0x58d
+ .debug_info    0x0000000000000000      0x58d msc_boot_jz4775.o
+
+.debug_line.3   0x0000000000000000      0x1d3
+ .debug_line    0x0000000000000000      0x1d3 msc_boot_jz4775.o
+
+.debug_frame    0x0000000000000000      0x2d8
+ .debug_frame   0x0000000000000000       0x90 msc_boot_jz4775.o
+ .debug_frame   0x0000000000000090       0x48 cpu.o
+ .debug_frame   0x00000000000000d8       0xa8 jz4775.o
+ .debug_frame   0x0000000000000180       0xc0 jz_serial.o
+ .debug_frame   0x0000000000000240       0x58 jz4775_ddr.o
+ .debug_frame   0x0000000000000298       0x40 jz_ddr3_init.o
+
+.debug_loc      0x0000000000000000     0x131a
+ .debug_loc     0x0000000000000000      0x36f msc_boot_jz4775.o
+ .debug_loc     0x000000000000036f       0x32 cpu.o
+ .debug_loc     0x00000000000003a1      0x106 jz4775.o
+ .debug_loc     0x00000000000004a7      0x1de jz_serial.o
+ .debug_loc     0x0000000000000685      0x88f jz4775_ddr.o
+ .debug_loc     0x0000000000000f14      0x406 jz_ddr3_init.o
+
+.debug_pubnames
+                0x0000000000000000      0x230
+ .debug_pubnames
+                0x0000000000000000       0x4e msc_boot_jz4775.o
+ .debug_pubnames
+                0x000000000000004e       0x50 cpu.o
+ .debug_pubnames
+                0x000000000000009e       0x87 jz4775.o
+ .debug_pubnames
+                0x0000000000000125       0x9a jz_serial.o
+ .debug_pubnames
+                0x00000000000001bf       0x3d jz4775_ddr.o
+ .debug_pubnames
+                0x00000000000001fc       0x34 jz_ddr3_init.o
+
+.debug_aranges.4
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 msc_boot_jz4775.o
+
+.debug_ranges   0x0000000000000000      0x5d8
+ .debug_ranges  0x0000000000000000       0xe8 msc_boot_jz4775.o
+ .debug_ranges  0x00000000000000e8       0x28 jz_serial.o
+ .debug_ranges  0x0000000000000110      0x2a8 jz4775_ddr.o
+ .debug_ranges  0x00000000000003b8      0x220 jz_ddr3_init.o
+
+.debug_str      0x0000000000000000      0x594
+ .debug_str     0x0000000000000000      0x20d msc_boot_jz4775.o
+                                        0x24d (松开之前的大小)
+ .debug_str     0x000000000000020d       0x38 cpu.o
+                                        0x114 (松开之前的大小)
+ .debug_str     0x0000000000000245       0x51 jz4775.o
+                                        0x14d (松开之前的大小)
+ .debug_str     0x0000000000000296       0xf7 jz_serial.o
+                                        0x1ce (松开之前的大小)
+ .debug_str     0x000000000000038d      0x195 jz4775_ddr.o
+                                        0x2b4 (松开之前的大小)
+ .debug_str     0x0000000000000522       0x72 jz_ddr3_init.o
+                                        0x163 (松开之前的大小)
+
+.comment        0x0000000000000000       0x6c
+ .comment       0x0000000000000000       0x12 msc_boot_jz4775.o
+ .comment       0x0000000000000012       0x12 cpu.o
+ .comment       0x0000000000000024       0x12 jz4775.o
+ .comment       0x0000000000000036       0x12 jz_serial.o
+ .comment       0x0000000000000048       0x12 jz4775_ddr.o
+ .comment       0x000000000000005a       0x12 jz_ddr3_init.o
+
+.debug_abbrev.5
+                0x0000000000000000       0x94
+ .debug_abbrev  0x0000000000000000       0x94 cpu.o
+
+.debug_info.6   0x0000000000000000       0xfb
+ .debug_info    0x0000000000000000       0xfb cpu.o
+
+.debug_line.7   0x0000000000000000       0x91
+ .debug_line    0x0000000000000000       0x91 cpu.o
+
+.debug_aranges.8
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 cpu.o
+
+.debug_abbrev.9
+                0x0000000000000000      0x165
+ .debug_abbrev  0x0000000000000000      0x165 jz4775.o
+
+.debug_info.10  0x0000000000000000      0x24c
+ .debug_info    0x0000000000000000      0x24c jz4775.o
+
+.debug_line.11  0x0000000000000000       0x99
+ .debug_line    0x0000000000000000       0x99 jz4775.o
+
+.debug_aranges.12
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 jz4775.o
+
+.debug_abbrev.13
+                0x0000000000000000      0x178
+ .debug_abbrev  0x0000000000000000      0x178 jz_serial.o
+
+.debug_info.14  0x0000000000000000      0x340
+ .debug_info    0x0000000000000000      0x340 jz_serial.o
+
+.debug_line.15  0x0000000000000000      0x11f
+ .debug_line    0x0000000000000000      0x11f jz_serial.o
+
+.debug_aranges.16
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 jz_serial.o
+
+.debug_abbrev.17
+                0x0000000000000000      0x203
+ .debug_abbrev  0x0000000000000000      0x203 jz4775_ddr.o
+
+.debug_info.18  0x0000000000000000      0x78d
+ .debug_info    0x0000000000000000      0x78d jz4775_ddr.o
+
+.debug_line.19  0x0000000000000000      0x2c0
+ .debug_line    0x0000000000000000      0x2c0 jz4775_ddr.o
+
+.debug_aranges.20
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 jz4775_ddr.o
+
+.debug_abbrev.21
+                0x0000000000000000       0xd6
+ .debug_abbrev  0x0000000000000000       0xd6 jz_ddr3_init.o
+
+.debug_info.22  0x0000000000000000      0x448
+ .debug_info    0x0000000000000000      0x448 jz_ddr3_init.o
+
+.debug_line.23  0x0000000000000000      0x12e
+ .debug_line    0x0000000000000000      0x12e jz_ddr3_init.o
+
+.debug_aranges.24
+                0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 jz_ddr3_init.o
